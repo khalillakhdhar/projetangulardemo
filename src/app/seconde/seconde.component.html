@@ -1,0 +1,10 @@
+<p>seconde works!</p>
+<a routerLink="/first">Go to first</a>
+<!-- html nom prenom form simple with ngModel -->
+<form (submit)="sayhello()">
+  <label for="nom">Nom</label>
+  <input type="text" required id="nom" name="nom" [(ngModel)]="nom">
+  <label for="prenom">Prenom</label>
+  <input type="text" id="prenom" required name="prenom" [(ngModel)]="prenom">
+  <button type="submit">submit</button>
+</form>
