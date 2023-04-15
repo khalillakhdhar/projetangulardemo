@@ -1,0 +1,66 @@
+<!--
+  form bootstrap avec FormGroup with FormControl
+  nom ,prenom, age email password code postale adresse
+-->
+<form [formGroup]="form" >
+  <div class="form-group">
+    <label for="name">Nom</label>
+    <input formControlName="name" id="name" type="text" class="form-control">
+    <div *ngIf="f['nom'].touched && f['nom'].invalid" class="alert alert-danger">
+      <div *ngIf="f['nom'].errors && f['nom'].errors['required']">Nom est obligatoire.</div>
+      <div *ngIf="f['nom'].errors && f['nom'].errors['minlength']">Nom doit avoir au moins 3 caractères.</div>
+      <div *ngIf="f['nom'].errors && f['nom'].errors['pattern']">Nom doit être alphabétique.</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="prenom">Prenom</label>
+    <input formControlName="prenom" id="prenom" type="text" class="form-control">
+    <div *ngIf="f['prenom'].touched && f['prenom'].invalid" class="alert alert-danger">
+      <div *ngIf="f['prenom'].errors && f['prenom'].errors['required']">Prenom est obligatoire.</div>
+      <div *ngIf="f['prenom'].errors && f['prenom'].errors['minlength']">Prenom doit avoir au moins 3 caractères.</div>
+      <div *ngIf="f['prenom'].errors && f['prenom'].errors['pattern']">Prenom doit être alphabétique.</div>
+    </div>
+</div>
+  <div class="form-group">
+    <label for="age">Age</label>
+    <input formControlName="age" id="age" type="number" class="form-control">
+    <div *ngIf="f['age'].touched && f['age'].invalid" class="alert alert-danger">
+      <div *ngIf="f['age'].errors && f['age'].errors['required']">Age est obligatoire.</div>
+      <div *ngIf="f['age'].errors && f['age'].errors['min']">Age doit être supérieur à 18.</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input formControlName="email" id="email" type="text" class="form-control">
+    <div *ngIf="f['email'].touched && f['email'].invalid" class="alert alert-danger">
+      <div *ngIf="f['email'].errors && f['email'].errors['required']">Email est obligatoire.</div>
+      <div *ngIf="f['email'].errors && f['email'].errors['email']">Veuillez entrer une adresse email valide.</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="password">Mot de passe</label>
+    <input formControlName="password" id="password" type="password" class="form-control">
+    <div *ngIf="f['password'].touched && f['password'].invalid" class="alert alert-danger">
+      <div *ngIf="f['password'].errors && f['password'].errors['required']">Mot de passe est obligatoire.</div>
+      <div *ngIf="f['password'].errors && f['password'].errors['pattern']">Mot de passe doit contenir des champs alpha numérique uniquement.</div>
+      <div *ngIf="f['password'].errors && f['password'].errors['minlength']">Mot de passe doit avoir au moins 6 caractères.</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="code">Code postale</label>
+    <input formControlName="code" id="code" type="number" class="form-control">
+    <div *ngIf="f['codePostal'].touched && f['codePostal'].invalid" class="alert alert-danger">
+      <div *ngIf="f['codePostal'].errors && f['codePostal'].errors['required']">Code postale est obligatoire.</div>
+      <div *ngIf="f['codePostal'].errors && f['codePostal'].errors['min']">Code postale doit être supérieur à 1000.</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="adresse">Adresse</label>
+    <input formControlName="adresse" id="adresse" type="text" class="form-control">
+    <div *ngIf="f['adresse'].touched && f['adresse'].invalid" class="alert alert-danger">
+      <div *ngIf="f['adresse'].errors && f['adresse'].errors['required']">Adresse est obligatoire.</div>
+    </div>
+    </div>
+  <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Submit</button>
+</form>
+

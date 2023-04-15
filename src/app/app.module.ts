@@ -7,6 +7,7 @@ import { FirstComponent } from './first/first.component';
 import { SecondeComponent } from './seconde/seconde.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormExampleComponent } from './form-example/form-example.component';
+import { ExerciceComponent } from './exercice/exercice.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { FormExampleComponent } from './form-example/form-example.component';
     AppComponent,
     FirstComponent,
     SecondeComponent,
-    FormExampleComponent
+    FormExampleComponent,
+    ExerciceComponent
   ],
   imports: [
     BrowserModule,
