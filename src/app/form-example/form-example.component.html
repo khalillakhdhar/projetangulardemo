@@ -10,6 +10,7 @@ class="form-control">
 <div *ngIf="f['name'].touched && f['name'].invalid" class="alert alert-danger">
 <div *ngIf="f['name'].errors && f['name'].errors['required']">Name is required.</div>
 <div *ngIf="f['name'].errors && f['name'].errors['minlength']">Name should be at least 3 characters.</div>
+<div *ngIf="f['name'].errors && f['name'].errors['pattern']">Name should be alphabetic.</div>
 </div>
 
 <div class="form-group">
