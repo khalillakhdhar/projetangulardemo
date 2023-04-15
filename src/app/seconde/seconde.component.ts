@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class SecondeComponent {
 nom:string=""; // variable nom initialisé
-prenom!:string; // variable prenom initialisé avec type nullable
+prenom:string=""; // variable prenom initialisé avec type nullable
 
 sayhello()
 {
